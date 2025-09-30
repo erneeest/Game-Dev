@@ -3,7 +3,7 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
 
-    [SerializeField] float mouseSens = 100f;
+    // [SerializeField] float mouseSens = 100f;
 
     [SerializeField] Transform playerBody;
     // [SerializeField] Transform playerCam;
