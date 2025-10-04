@@ -37,6 +37,7 @@ It serves as a collection of experiments, projects, and notes while improving my
 - Post-processing stack
 - Lighting setups
 - Visual polish for atmosphere
+- Unity Particle System
 
 ---
 
