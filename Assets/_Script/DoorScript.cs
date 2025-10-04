@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class DoorScript : MonoBehaviour
@@ -39,30 +38,21 @@ public class DoorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inReach && Input.GetButtonDown("Interact") && isOpen)
+        if (inReach && Input.GetButtonDown("Interact") && !isOpen)
         {
-            DoorOpen();
+            DoorOpen(true);
             isOpen = !isOpen;
         }
-        else if (inReach && Input.GetButtonDown("Interact") && !isOpen)
+        else if (inReach && Input.GetButtonDown("Interact") && isOpen)
         {
-            DoorCloses();
+            DoorOpen(false);
             isOpen = !isOpen;
         }
-        
     }
 
-    void DoorOpen()
+    void DoorOpen(bool isOpen)
     {
         // Debug.Log("Door Open");
-        door.SetBool("Open", true);
-        door.SetBool("Close", false);
-    }
-
-    void DoorCloses()
-    {
-        // Debug.Log("Door Closes");
-        door.SetBool("Open", false);
-        door.SetBool("Close", true);
+        door.SetBool("Open", isOpen);
     }
 }
