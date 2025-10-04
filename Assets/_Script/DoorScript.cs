@@ -4,6 +4,7 @@ using UnityEngine;
 public class DoorScript : MonoBehaviour
 {
 
+    public Animator door;
     // public Animator door;
     public GameObject openText;
 
@@ -33,30 +34,35 @@ public class DoorScript : MonoBehaviour
         }
     }
 
-    // // Update is called once per frame
-    // void Update()
-    // {
-    //     if (inReach && Input.GetButtonDown("Interact"))
-    //     {
-    //         DoorOpen();
-    //     }
-    //     else
-    //     {
-    //         DoorCloses();
-    //     }
-    // }
+    bool isOpen = false;
 
-    // void DoorOpen()
-    // {
-    //     Debug.Log("Door Open");
-    //     // door.SetBool("Open", true);
-    //     // door.SetBool("Close", false);
-    // }
+    // Update is called once per frame
+    void Update()
+    {
+        if (inReach && Input.GetButtonDown("Interact") && isOpen)
+        {
+            DoorOpen();
+            isOpen = !isOpen;
+        }
+        else if (inReach && Input.GetButtonDown("Interact") && !isOpen)
+        {
+            DoorCloses();
+            isOpen = !isOpen;
+        }
+        
+    }
 
-    // void DoorCloses()
-    // {
-    //     Debug.Log("Door Closes");
-    //     // door.SetBool("Open", false);
-    //     // door.SetBool("Close", true);
-    // }
+    void DoorOpen()
+    {
+        // Debug.Log("Door Open");
+        door.SetBool("Open", true);
+        door.SetBool("Close", false);
+    }
+
+    void DoorCloses()
+    {
+        // Debug.Log("Door Closes");
+        door.SetBool("Open", false);
+        door.SetBool("Close", true);
+    }
 }
