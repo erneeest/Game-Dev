@@ -1,18 +1,15 @@
-using System;
-using NUnit.Framework;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public CharacterController controller;
+    [SerializeField] CharacterController controller;
     float movementSpeed = 3f;
 
-    public float gravity = -9.81f * 2f;
+    [SerializeField] float gravity = -9.81f * 2f;
 
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groundMask;
+    [SerializeField] Transform groundCheck;
+    [SerializeField] float groundDistance = 0.4f;
+    [SerializeField] LayerMask groundMask;
 
     Vector3 velocity;
     bool isGrounded;

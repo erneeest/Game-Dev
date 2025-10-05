@@ -3,11 +3,10 @@ using UnityEngine;
 public class DoorScript : MonoBehaviour
 {
 
-    public Animator door;
-    // public Animator door;
-    public GameObject openText;
+    [SerializeField] Animator door;
+    [SerializeField] GameObject openText;
 
-    public bool inReach;
+    [SerializeField] bool inReach;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
