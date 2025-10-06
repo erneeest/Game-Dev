@@ -32,6 +32,8 @@ It serves as a collection of experiments, projects, and notes while improving my
 ### 💬 Dialogue Systems
 - Ink integration for branching narratives
 - Dialogue triggers and UI handling
+- Variables and Voices synced with the subtitile
+- Response choices
 
 ### 🎨 Visual Improvements
 - Post-processing stack
