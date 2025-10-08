@@ -38,7 +38,7 @@ It serves as a collection of experiments, projects, and notes while improving my
 ### 🎨 Visual Improvements
 - Post-processing stack
 - Lighting setups
-- Visual polish for atmosphere
+- Visual polish for atmosphere (Shader Graph)
 - Unity Particle System
 
 ---
