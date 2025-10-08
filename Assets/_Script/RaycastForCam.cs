@@ -3,7 +3,7 @@ using UnityEngine;
 public class RaycastForCam : MonoBehaviour
 {
     [SerializeField] float range = 5f;
-    RaycastHit hit;
+    public RaycastHit hit;
 
     // Update is called once per frame
     void Update()
