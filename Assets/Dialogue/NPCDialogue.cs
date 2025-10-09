@@ -26,7 +26,7 @@ public class NPCDialogue : MonoBehaviour
     bool isShowingText = false;
     void Update()
     {
-        if (raycastCam.hit.transform != null)
+        if (raycastCam.hit.transform != null && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
             if (raycastCam.hitGameObject.CompareTag("NPC"))
             {
