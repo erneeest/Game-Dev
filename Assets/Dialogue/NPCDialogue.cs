@@ -25,7 +25,16 @@ public class NPCDialogue : MonoBehaviour
 
     bool isShowingText = false;
     void Update()
-    {
+    {      // Returns true or false
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            isDialogueActive = true;
+        }
+        else
+        {
+            isDialogueActive = false;
+        }
+
         if (raycastCam.hit.transform != null && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
             if (raycastCam.hitGameObject.CompareTag("NPC"))
@@ -60,8 +69,8 @@ public class NPCDialogue : MonoBehaviour
                 isShowingText = false;
         }
 
+        Debug.Log(isDialogueActive);
     }
-
 
 
 }
