@@ -879,6 +879,52 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9999999, y: 1, z: 0.99999994}
   m_Center: {x: 0.0000009536743, y: 0, z: 0.000000059604645}
+--- !u!1 &275386006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 275386008}
+  - component: {fileID: 275386007}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &275386007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275386006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81f677d94ab92445a45605a924c1f3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+  dialoguePanel: {fileID: 1825905617}
+  dialogueText: {fileID: 1542683641}
+--- !u!4 &275386008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275386006}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1019.89294, y: 521.12225, z: 42.32914}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &303264271 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8266333823062405925, guid: fb2c6c78b49fc2c4e9a8d6d86c115bcc, type: 3}
@@ -3884,3 +3930,4 @@ SceneRoots:
   - {fileID: 1837956358}
   - {fileID: 156455750}
   - {fileID: 595045860}
+  - {fileID: 275386008}
