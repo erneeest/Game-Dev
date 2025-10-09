@@ -44,7 +44,7 @@ public class NPCDialogue : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     isDialogueActive = true;
-                    Debug.Log(inkJSON.text);
+                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
                 }
 
             }
