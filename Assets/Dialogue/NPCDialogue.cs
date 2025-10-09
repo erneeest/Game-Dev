@@ -1,5 +1,6 @@
 using System;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NPCDialogue : MonoBehaviour
@@ -10,6 +11,12 @@ public class NPCDialogue : MonoBehaviour
 
     [Header("Raycast Detection")]
     [SerializeField] RaycastForCam raycastCam;
+
+
+    [Header("Ink JSON")]
+    [SerializeField] private TextAsset inkJSON;
+    private bool isDialogueActive = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -21,17 +28,31 @@ public class NPCDialogue : MonoBehaviour
     {
         if (raycastCam.hit.transform != null)
         {
-            if (raycastCam.hit.transform.gameObject.CompareTag("NPC") && !isShowingText)
+            if (raycastCam.hitGameObject.CompareTag("NPC"))
             {
-                npcText.SetText(NPCString);
-                isShowingText = true;
+                if(isShowingText == false)
+                {   
+                    npcText.SetText(NPCString);
+                    isShowingText = true;
+                }
+
+                if (isDialogueActive)
+                {
+                    return;
+                }
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    isDialogueActive = true;
+                    Debug.Log(inkJSON.text);
+                }
+
             }
-            else if (!raycastCam.hit.transform.gameObject.CompareTag("NPC") && isShowingText)
+            else if (!raycastCam.hitGameObject.CompareTag("NPC"))
             {
                 npcText.SetText("");
                 isShowingText = false;
             }
-            Debug.Log(raycastCam.hit.transform.gameObject.tag);
         }
         else
         {
