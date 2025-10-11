@@ -146,11 +146,26 @@ public class DialogueManager : MonoBehaviour
 
         dialogueText.text = "";
         canContinueToNextLine = false;
+
+        bool isAddingRichTextTag = false;
             foreach (char letter in line.ToCharArray())
+        {
+            if(letter == '<' || isAddingRichTextTag)
+            {
+                isAddingRichTextTag = true;
+                dialogueText.text += letter;
+                if(letter == '>')
+                {
+                    isAddingRichTextTag = false;
+                }
+            }
+            else
             {
                 dialogueText.text += letter;
                 yield return new WaitForSeconds(typingSpeed);
+                
             }
+        }
             DisplayChoices();
         canContinueToNextLine = true;
     }
