@@ -1,4 +1,6 @@
 using System;
+// using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -17,27 +19,36 @@ public class NPCDialogue : MonoBehaviour
     [SerializeField] private TextAsset inkJSON;
     private bool isDialogueActive = false;
 
+    bool isShowingText = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         npcText.enabled = true;
     }
-
-    bool isShowingText = false;
     void Update()
-    {      // Returns true or false
-        if (DialogueManager.GetInstance().dialogueIsPlaying)
+    {
+        if (raycastCam.hitGameObject != null && raycastCam.hitGameObject.GetComponent<NPCDialogue>() != null)
         {
-            isDialogueActive = true;
+            raycastCam.hitGameObject.GetComponent<NPCDialogue>().RunTrigger();
         }
-        else
-        {
-            isDialogueActive = false;
-        }
+    }
+    
+    void RunTrigger()
+    {
+        // Returns true or false
+              if (DialogueManager.GetInstance().dialogueIsPlaying)
+              {
+                  isDialogueActive = true;
+              }
+              else
+              {
+                  isDialogueActive = false;
+              }
 
-        if (raycastCam.hit.transform != null && !DialogueManager.GetInstance().dialogueIsPlaying)
+        if (!isDialogueActive)
         {
-            if (raycastCam.hitGameObject.CompareTag("NPC"))
+            if (raycastCam.hitGameObject.GetComponent<NPCDialogue>() != null)
             {
                 if(isShowingText == false)
                 {   
@@ -55,9 +66,9 @@ public class NPCDialogue : MonoBehaviour
                     isDialogueActive = true;
                     DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
                 }
-
+                
             }
-            else if (!raycastCam.hitGameObject.CompareTag("NPC"))
+            else if(raycastCam.hitGameObject.GetComponent<NPCDialogue>())
             {
                 npcText.SetText("");
                 isShowingText = false;
@@ -71,6 +82,4 @@ public class NPCDialogue : MonoBehaviour
 
         Debug.Log(isDialogueActive);
     }
-
-
 }
