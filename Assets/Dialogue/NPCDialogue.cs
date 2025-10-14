@@ -1,25 +1,27 @@
 using System;
-// using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class NPCDialogue : MonoBehaviour
+
+public class NPCDialogue : MonoBehaviour, IInteractable
 {
     [Header("NPC Visual Cue")]
     [SerializeField] TextMeshProUGUI npcText;
     [SerializeField] string NPCString;
 
-    [Header("Raycast Detection")]
-    [SerializeField] RaycastForCam raycastCam;
+    // [Header("Raycast Detection")]
+    // [SerializeField] RaycastForCam raycastCam;
 
 
-    [Header("Ink JSON")]
-    [SerializeField] private TextAsset inkJSON;
-    private bool isDialogueActive = false;
+    // [Header("Ink JSON")]
+    // [SerializeField] private TextAsset inkJSON;
+    // private bool isDialogueActive = false;
 
-    bool isShowingText = false;
+    // bool isShowingText = false;
+
+    // bool test = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -28,58 +30,68 @@ public class NPCDialogue : MonoBehaviour
     }
     void Update()
     {
-        if (raycastCam.hitGameObject != null && raycastCam.hitGameObject.GetComponent<NPCDialogue>() != null)
-        {
-            raycastCam.hitGameObject.GetComponent<NPCDialogue>().RunTrigger();
-        }
+        // if (raycastCam.hitGameObject != null && raycastCam.hitGameObject.GetComponent<NPCDialogue>() != null)
+        // {
+        //     raycastCam.hitGameObject.GetComponent<NPCDialogue>().Interact();
+        // }
+        // else
+        // {
+        //     npcText.SetText("");
+        //     isShowingText = false;
+        // }
+        // Debug.Log("Tesing" + test);
     }
-    
-    void RunTrigger()
+
+    public void Interact()
     {
-        // Returns true or false
-              if (DialogueManager.GetInstance().dialogueIsPlaying)
-              {
-                  isDialogueActive = true;
-              }
-              else
-              {
-                  isDialogueActive = false;
-              }
 
-        if (!isDialogueActive)
-        {
-            if (raycastCam.hitGameObject.GetComponent<NPCDialogue>() != null)
-            {
-                if(isShowingText == false)
-                {   
-                    npcText.SetText(NPCString);
-                    isShowingText = true;
-                }
+        npcText.text = "Damn Interact [E]";
 
-                if (isDialogueActive)
-                {
-                    return;
-                }
+        // // Returns true or false
+        // if (DialogueManager.GetInstance().dialogueIsPlaying)
+        // {
+        //     isDialogueActive = true;
+        // }
+        // else
+        // {
+        //     isDialogueActive = false;
+        // }
 
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    isDialogueActive = true;
-                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
-                }
-                
-            }
-            else if(raycastCam.hitGameObject.GetComponent<NPCDialogue>())
-            {
-                npcText.SetText("");
-                isShowingText = false;
-            }
-        }
-        else
-        {
-                npcText.SetText("");
-                isShowingText = false;
-        }
+        // if (!isDialogueActive)
+        // {
+        //     if (raycastCam.hitGameObject.GetComponent<NPCDialogue>() != null)
+        //     {
+        //         if (isShowingText == false)
+        //         {
+        //             npcText.SetText(NPCString);
+        //             isShowingText = true;
+        //         }
 
-        Debug.Log(isDialogueActive);
+        //         if (isDialogueActive)
+        //         {
+        //             return;
+        //         }
+
+        //         if (Input.GetKeyDown(KeyCode.E))
+        //         {
+        //             isDialogueActive = true;
+        //             DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+        //         }
+
+        //     }
+        //     else
+        //     {
+        //         test = true;
+        //     }
+
+        // }
+        // else
+        // {
+        //     npcText.SetText("");
+        //     isShowingText = false;
+        // }
+
+        // Debug.Log(isDialogueActive);
     }
+
 }

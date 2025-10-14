@@ -2141,6 +2141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   range: 5
   hitGameObject: {fileID: 0}
+  npcText: {fileID: 957801745}
 --- !u!1 &1196491664
 GameObject:
   m_ObjectHideFlags: 0
@@ -2899,6 +2900,10 @@ PrefabInstance:
       propertyPath: npcText
       value: 
       objectReference: {fileID: 957801745}
+    - target: {fileID: 6545330546134685988, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: NPCString
+      value: 'Interadsfasdfact [E]'
+      objectReference: {fileID: 0}
     - target: {fileID: 6545330546134685988, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: raycastCam
       value: 
@@ -4674,6 +4679,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5414390203567696192, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6545330546134685988, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: npcText
       value: 
