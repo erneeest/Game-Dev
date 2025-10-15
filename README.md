@@ -58,7 +58,7 @@ Each feature will be implemented in small sample projects to reinforce learning.
 - **Unity (latest LTS version)**
 - [Cinemachine](https://docs.unity3d.com/Packages/com.unity.cinemachine@latest)
 - [ProBuilder](https://docs.unity3d.com/Packages/com.unity.probuilder@latest)
-- [Ink Unity Integration](https://github.com/inkle/ink-unity-integration)
+- [Fungus Dialogue System](https://github.com/snozbot/fungus)
 - Unity Post-processing
 
 ---
