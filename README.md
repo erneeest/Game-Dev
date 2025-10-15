@@ -34,10 +34,9 @@ It serves as a collection of experiments, projects, and notes while improving my
 - ProBuilder for creating and editing meshes
 - Scene prototyping
 
-### 💬 Dialogue Systems
-- Ink integration for branching narratives
+### 💬 Dialogue Systems (Fungus)
+- Fungus Unity External Asset
 - Dialogue triggers and UI handling
-- Variables and Voices synced with the subtitile
 - Response choices
 - Dialogue synced with voice over
 
