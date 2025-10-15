@@ -25,6 +25,11 @@ It serves as a collection of experiments, projects, and notes while improving my
 - Free look cameras
 - Camera transitions & blending
 
+### 🏀 Interactable Objects w/ Outline Asset
+- Outline Unity External Asset
+- Setting Interact() in the Inspector
+- Reusable Prefab and Script for Interact
+
 ### 🏗️ Level Design Tools
 - ProBuilder for creating and editing meshes
 - Scene prototyping
