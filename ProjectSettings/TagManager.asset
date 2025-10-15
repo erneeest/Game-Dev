@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Reach
   - NPC
+  - Interactable
   layers:
   - Default
   - TransparentFX
