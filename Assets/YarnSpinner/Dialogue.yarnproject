@@ -1,0 +1,14 @@
+{
+  "projectFileVersion": 3,
+  "sourceFiles": [
+    "Nanay.yarn"
+  ],
+  "excludeFiles": [
+    "**/*~/*",
+    "./Samples/Yarn Spinner*/*"
+  ],
+  "localisation": {},
+  "baseLanguage": "en",
+  "compilerOptions": {},
+  "definitionsFiles": []
+}
