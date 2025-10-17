@@ -35,8 +35,9 @@ It serves as a collection of experiments, projects, and notes while improving my
 - ProBuilder for creating and editing meshes
 - Scene prototyping
 
-### 💬 Dialogue Systems (Fungus)
-- Fungus Unity External Asset
+### 💬 Dialogue System (Yarn Spinner)
+- Yarn Spinner Unity External Asset (Paid in Asset Store / Open Source in Gihub [link down below])
+- Dialogue Visual Nodes in VSCode using Yarn Spinner Ext.
 - Dialogue triggers and UI handling
 - Response choices
 - Dialogue synced with voice over
@@ -59,8 +60,8 @@ Each feature will be implemented in small sample projects to reinforce learning.
 - **Unity (latest LTS version)**
 - [Cinemachine](https://docs.unity3d.com/Packages/com.unity.cinemachine@latest)
 - [ProBuilder](https://docs.unity3d.com/Packages/com.unity.probuilder@latest)
-- [Fungus Dialogue System](https://github.com/snozbot/fungus)
-- Unity Post-processing
+- [Yarn Spinner Dialogue System](https://github.com/YarnSpinnerTool/YarnSpinner)
+- [Unity Post-processing](https://docs.unity3d.com/6000.2/Documentation/Manual/PostProcessingOverview.html)
 
 ---
 
