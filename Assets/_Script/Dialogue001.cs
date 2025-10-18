@@ -15,6 +15,7 @@ public class Dialogue001 : MonoBehaviour
     void Start()
     {
         dialogue.enabled = false;
+        dialogueRunner.onNodeComplete.AddListener(CustomFunction);
     }
 
     void OnTriggerEnter(Collider other)
@@ -25,7 +26,6 @@ public class Dialogue001 : MonoBehaviour
             // dialogue.text = dialogueText.ToString();
             // StartCoroutine(DisableText());
             dialogueRunner.StartDialogue("Nanay");
-            dialogueRunner.onDialogueComplete.AddListener(customFunction);
         }
 
     }
@@ -37,9 +37,13 @@ public class Dialogue001 : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void customFunction()
+    void CustomFunction(string node)
     {
-        Debug.Log("Hi");
+        if(node == "Nanay")
+        {
+            Debug.Log("Hi");
+            Debug.Log(node);
+        }
     }
 
 }

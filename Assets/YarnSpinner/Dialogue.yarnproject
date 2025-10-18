@@ -1,7 +1,8 @@
 {
   "projectFileVersion": 3,
   "sourceFiles": [
-    "Nanay.yarn"
+    "Nanay.yarn",
+    "Dog.yarn"
   ],
   "excludeFiles": [
     "**/*~/*",
