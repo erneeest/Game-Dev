@@ -3788,7 +3788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 555393123423236302, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2576323899156712400, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3829,6 +3829,38 @@ PrefabInstance:
     - target: {fileID: 2576323899156712400, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 454481455}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CustomStartDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DialogueEvents, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Nanay
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -22,6 +22,7 @@ public class Dialogue001 : MonoBehaviour
             // dialogue.enabled = true;
             // dialogue.text = dialogueText.ToString();
             // StartCoroutine(DisableText());
+            Destroy(gameObject);
             dialogueRunner.StartDialogue("Nanay");
         }
 
