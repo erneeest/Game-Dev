@@ -642,7 +642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: autoStart
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: startNode
@@ -1360,6 +1360,52 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &454481454
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 454481456}
+  - component: {fileID: 454481455}
+  m_Layer: 0
+  m_Name: DialogueEventManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &454481455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454481454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aee3ccbdbde4a064fa36b6164d5de87a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  dialogueRunner: {fileID: 1066131404}
+  NPC: {fileID: 2045815426}
+--- !u!4 &454481456
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454481454}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.5112, y: 0.54664, z: 2.86734}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &461239851
 GameObject:
   m_ObjectHideFlags: 1
@@ -3041,10 +3087,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a7e0a7bba6033a41b819e0b60cb1a0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  dialogueRunner: {fileID: 1066131404}
   dialogue: {fileID: 111564686}
   dialogueText: Hell YEAH!!!
   timer: 5
-  dialogueRunner: {fileID: 1066131404}
 --- !u!65 &1395046338
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3595,6 +3641,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 868930030}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2045815426 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 555393123423236302, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+  m_PrefabInstance: {fileID: 655353716736786989}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2094431962
 GameObject:
   m_ObjectHideFlags: 0
@@ -3719,10 +3770,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a7e0a7bba6033a41b819e0b60cb1a0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  dialogueRunner: {fileID: 0}
   dialogue: {fileID: 111564686}
   dialogueText: Ang dilim naman dito
   timer: 2
-  dialogueRunner: {fileID: 0}
 --- !u!1001 &655353716736786989
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3734,6 +3785,10 @@ PrefabInstance:
     - target: {fileID: 555393123423236302, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: m_Name
       value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 555393123423236302, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2576323899156712400, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3919,3 +3974,4 @@ SceneRoots:
   - {fileID: 655353716736786989}
   - {fileID: 461239853}
   - {fileID: 119988368}
+  - {fileID: 454481456}
