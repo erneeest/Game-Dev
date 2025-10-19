@@ -7,6 +7,8 @@ public class DialogueEvents : MonoBehaviour
     [SerializeField] DialogueRunner dialogueRunner;
     [SerializeField] GameObject NPC;
 
+    [SerializeField] PlayerInteraction playerInteraction;
+
     void Start()
     {
         // dialogueRunner.onNodeComplete.AddListener(CustomFunction);
@@ -33,6 +35,16 @@ public class DialogueEvents : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         NPC.SetActive(true);
+    }
+
+        //On every node that started, disable [E]
+    public void DisableInteractWhenStartDialoguue(string node)
+    {
+        playerInteraction.isInDialogue = true;
+    }
+    public void EnableInteractWhenStartDialogue(string node)
+    {
+        playerInteraction.isInDialogue = false;        
     }
 
 }

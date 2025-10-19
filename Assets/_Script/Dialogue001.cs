@@ -34,6 +34,4 @@ public class Dialogue001 : MonoBehaviour
         dialogue.enabled = false;
         Destroy(gameObject);
     }
-
-
 }

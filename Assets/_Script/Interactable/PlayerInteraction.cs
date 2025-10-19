@@ -4,14 +4,15 @@ public class PlayerInteraction : MonoBehaviour
 {
     public float playerReach = 3f;
     Interactable currentInteractable;
+    public bool isInDialogue = false;
 
     // Update is called once per frame
     void Update()
     {
         CheckInteraction();
-        if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
+        if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null && !isInDialogue)
         {
-            currentInteractable.Interact();
+            currentInteractable.Interact();            
         }
 
     }
@@ -56,6 +57,12 @@ public class PlayerInteraction : MonoBehaviour
     void SetNewCurrentInteractable(Interactable newInteractable)
     {
         currentInteractable = newInteractable;
+        if (isInDialogue)
+        {
+            currentInteractable.DisableOutline();
+            HUDController.instance.DisableInteractionText();
+            return;
+        } 
         currentInteractable.EnableOutline();
         HUDController.instance.EnableInteractionText(currentInteractable.message);
     }
