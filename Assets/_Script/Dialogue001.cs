@@ -23,7 +23,7 @@ public class Dialogue001 : MonoBehaviour
             // dialogue.text = dialogueText.ToString();
             // StartCoroutine(DisableText());
             Destroy(gameObject);
-            dialogueRunner.StartDialogue("Nanay");
+            dialogueRunner.StartDialogue("Dog");
         }
 
     }

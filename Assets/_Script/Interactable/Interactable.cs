@@ -6,6 +6,8 @@ public class Interactable : MonoBehaviour
     Outline outline;
     public string message;
 
+    public bool isDialogueEnded = false;
+
     public UnityEvent onInteraction;
 
     void Start()

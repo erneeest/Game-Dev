@@ -10,9 +10,17 @@ public class PlayerInteraction : MonoBehaviour
     void Update()
     {
         CheckInteraction();
+
+        // CheckIfDialogueIsEnded();
+        if (currentInteractable != null && currentInteractable.isDialogueEnded)
+        {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null && !isInDialogue)
         {
-            currentInteractable.Interact();            
+            currentInteractable.Interact();
+            currentInteractable.isDialogueEnded = true;         
         }
 
     }
@@ -57,16 +65,24 @@ public class PlayerInteraction : MonoBehaviour
     void SetNewCurrentInteractable(Interactable newInteractable)
     {
         currentInteractable = newInteractable;
+
         if (isInDialogue)
         {
             currentInteractable.DisableOutline();
             HUDController.instance.DisableInteractionText();
             return;
-        } 
+        }
+
+        // CheckIfDialogueIsEnded();
+        if (currentInteractable != null && currentInteractable.isDialogueEnded)
+        {
+            return;
+        }
+
         currentInteractable.EnableOutline();
         HUDController.instance.EnableInteractionText(currentInteractable.message);
     }
-    
+
     void DisableCurrentInteractable()
     {
         HUDController.instance.DisableInteractionText();
@@ -74,6 +90,14 @@ public class PlayerInteraction : MonoBehaviour
         {
             currentInteractable.DisableOutline();
             currentInteractable = null;
+        }
+    }
+    
+    void CheckIfDialogueIsEnded()
+    {
+        if (currentInteractable != null && currentInteractable.isDialogueEnded)
+        {
+            return;
         }
     }
 }
