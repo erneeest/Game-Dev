@@ -40,7 +40,14 @@ It serves as a collection of experiments, projects, and notes while improving my
 - Dialogue Visual Nodes in VSCode using Yarn Spinner Ext.
 - Dialogue triggers and UI handling
 - Response choices
+  
+
+### 📷 Sound Design
+- Sound Management via Sound Manager
 - Dialogue synced with voice over
+- Example implementation script (footsteps, ambience, jumpscare SFX)
+- sound designer’s tech stack (FMOD, Wwise, plugins, DAWs, Audacity)
+- Best practices for horror audio
 
 ### 🎨 Visual Improvements
 - Post-processing stack
