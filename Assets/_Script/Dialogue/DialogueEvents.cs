@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using Yarn;
 using Yarn.Unity;
 
 public class DialogueEvents : MonoBehaviour
@@ -9,9 +10,14 @@ public class DialogueEvents : MonoBehaviour
 
     [SerializeField] PlayerInteraction playerInteraction;
 
+    [SerializeField] Camera cam;
+    [SerializeField] GameObject lightning;
+    [SerializeField] AudioSource lightingSound;
+
     void Start()
     {
         // dialogueRunner.onNodeComplete.AddListener(CustomFunction);
+        dialogueRunner.onNodeComplete.AddListener(AfterDialogue); // Adding listener
     }
 
     //when interacted with the NPC
@@ -44,7 +50,26 @@ public class DialogueEvents : MonoBehaviour
     }
     public void EnableInteractWhenStartDialogue(string node)
     {
-        playerInteraction.isInDialogue = false;        
+        playerInteraction.isInDialogue = false;
     }
+
+    //test thunder
+    void AfterDialogue(string node) // this will happen the node's done
+    {
+        if (node == "Nanay")
+        {
+            cam.backgroundColor = Color.white;
+            lightingSound.Play();
+            lightning.SetActive(true);
+            StartCoroutine(ThunderForSec());
+        }
+    }
+    IEnumerator ThunderForSec()
+    {
+        yield return new WaitForSeconds(0.2f);
+        lightning.SetActive(false);
+        cam.backgroundColor = Color.black;
+    }
+
 
 }
