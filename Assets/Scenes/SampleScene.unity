@@ -961,6 +961,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 61186a80725231c47a92cb32fb6b7083, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 61186a80725231c47a92cb32fb6b7083, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 61186a80725231c47a92cb32fb6b7083, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 61186a80725231c47a92cb32fb6b7083, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6749
       objectReference: {fileID: 0}
@@ -1000,13 +1012,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 61186a80725231c47a92cb32fb6b7083, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 61186a80725231c47a92cb32fb6b7083, type: 3}
       propertyPath: m_Name
       value: Aband
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 61186a80725231c47a92cb32fb6b7083, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5069306351237834454, guid: 61186a80725231c47a92cb32fb6b7083, type: 3}
       propertyPath: m_IsActive
@@ -2696,7 +2712,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1419398612518417393, guid: fb2c6c78b49fc2c4e9a8d6d86c115bcc, type: 3}
   m_PrefabInstance: {fileID: 6985445123334574284}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &995285556
+--- !u!114 &995285561
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2705,10 +2721,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 995285550}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3753741c189a29b4e8d3b2212f9b1e78, type: 3}
+  m_Script: {fileID: 11500000, guid: bb819ddeb04092847ae9b53a8bf0bf8f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MouseLook
-  playerBody: {fileID: 303264274}
+  m_EditorClassIdentifier: Assembly-CSharp::HeadBob
+  bobSpeed: 10
+  bobAmount: 0.05
 --- !u!114 &1066131404 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d, type: 3}
@@ -2720,6 +2737,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1076846487 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9051206808645021126, guid: fb2c6c78b49fc2c4e9a8d6d86c115bcc, type: 3}
+  m_PrefabInstance: {fileID: 6985445123334574284}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1076846491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076846487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3753741c189a29b4e8d3b2212f9b1e78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MouseLook
+  playerBody: {fileID: 303264274}
 --- !u!1 &1098164355
 GameObject:
   m_ObjectHideFlags: 0
@@ -4488,9 +4523,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8266333823062405925, guid: fb2c6c78b49fc2c4e9a8d6d86c115bcc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 303264272}
+    - targetCorrespondingSourceObject: {fileID: 9051206808645021126, guid: fb2c6c78b49fc2c4e9a8d6d86c115bcc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1076846491}
     - targetCorrespondingSourceObject: {fileID: 1419398612518417393, guid: fb2c6c78b49fc2c4e9a8d6d86c115bcc, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 995285556}
+      addedObject: {fileID: 995285561}
   m_SourcePrefab: {fileID: 100100000, guid: fb2c6c78b49fc2c4e9a8d6d86c115bcc, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
