@@ -10,10 +10,14 @@ public class DialogueEvents : MonoBehaviour
 
     [SerializeField] PlayerInteraction playerInteraction;
 
+    [Header("Thunder Effect")]
     [SerializeField] Camera cam;
     [SerializeField] GameObject lightning;
     [SerializeField] AudioSource lightingSound;
 
+    [Header("Player Movement")]
+    [SerializeField] PlayerMovement playerMovement;
+    [SerializeField] HeadBob headBob;
     void Start()
     {
         // dialogueRunner.onNodeComplete.AddListener(CustomFunction);
@@ -69,6 +73,19 @@ public class DialogueEvents : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         lightning.SetActive(false);
         cam.backgroundColor = Color.black;
+    }
+
+    //Movement 
+    public void StopMovement()
+    {
+        playerMovement.enabled = false;
+        headBob.enabled = false;
+    }
+
+    public void GoMovement()
+    {
+        playerMovement.enabled = true;
+        headBob.enabled = false;
     }
 
 
