@@ -17,7 +17,6 @@ public class ObjectGrabbable : MonoBehaviour
     {
         this.objectGrabPointTransform = objectGrabPointTransform;
         objectRigidbody.useGravity = false;
-        boxCollider.enabled = false;
     }
 
     // Update is called once per frame
@@ -25,7 +24,9 @@ public class ObjectGrabbable : MonoBehaviour
     {
         if(objectGrabPointTransform != null)
         {
-          objectRigidbody.MovePosition(objectGrabPointTransform.position);
+            float lerpSpeed = 10f;
+            Vector3 newPosition = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
+            objectRigidbody.MovePosition(newPosition);
         }
     }
 }
