@@ -6,6 +6,8 @@ public class PlayerInteraction : MonoBehaviour
     Interactable currentInteractable;
     public bool isInDialogue = false;
 
+    [Header("Raycast")]
+    [SerializeField] RaycastForCam raycastForCam;
     // Update is called once per frame
     void Update()
     {
@@ -27,14 +29,13 @@ public class PlayerInteraction : MonoBehaviour
 
     void CheckInteraction()
     {
-        RaycastHit hit;
-        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+
         //if colliders with anything within player reach
-        if (Physics.Raycast(ray, out hit, playerReach))
+        if (raycastForCam.didHit)
         {
-            if (hit.collider.CompareTag("Interactable"))//if looking at an interactable object
+            if (raycastForCam.hit.collider.CompareTag("Interactable"))//if looking at an interactable object
             {
-                Interactable newInteractable = hit.collider.GetComponent<Interactable>();
+                Interactable newInteractable = raycastForCam.hit.collider.GetComponent<Interactable>();
 
                 //if there is a currentInteracable and it is not the newInteractable
                 if (currentInteractable && newInteractable != currentInteractable)
