@@ -1,16 +1,27 @@
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerPickupDrop : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+
+    [SerializeField] Camera cam;
+    [SerializeField] Transform objectGrabPointTransform;
 
     // Update is called once per frame
     void Update()
     {
-        
+        RaycastHit hit;
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 4f))
+            {
+                if (hit.transform.TryGetComponent<ObjectGrabbable>(out ObjectGrabbable objectGrabbable))
+                {
+                    Debug.Log("HELLO");
+                    objectGrabbable.Grab(objectGrabPointTransform);
+                }
+            }
+        }
     }
 }
