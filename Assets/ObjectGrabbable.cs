@@ -4,19 +4,25 @@ public class ObjectGrabbable : MonoBehaviour
 {
     private Rigidbody objectRigidbody;
     private Transform objectGrabPointTransform;
-    private BoxCollider boxCollider;
+    // private BoxCollider boxCollider;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         objectRigidbody = GetComponent<Rigidbody>();
-        boxCollider = GetComponent<BoxCollider>();
+        // boxCollider = GetComponent<BoxCollider>();
     }
 
     public void Grab(Transform objectGrabPointTransform)
     {
         this.objectGrabPointTransform = objectGrabPointTransform;
         objectRigidbody.useGravity = false;
+    }
+
+    public void Drop()
+    {
+        this.objectGrabPointTransform = null;
+        objectRigidbody.useGravity = true;
     }
 
     // Update is called once per frame
