@@ -3,7 +3,7 @@ using UnityEngine;
 public class RaycastForCam : MonoBehaviour
 {
     [SerializeField] Camera cam;
-    [SerializeField] float raycastRange = 4f;
+    float raycastRange = 20f;
     public RaycastHit hit;
     public bool didHit = false;
 

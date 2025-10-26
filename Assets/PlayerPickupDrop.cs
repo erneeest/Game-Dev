@@ -6,17 +6,19 @@ public class PlayerPickupDrop : MonoBehaviour
 
     [SerializeField] Camera cam;
     [SerializeField] Transform objectGrabPointTransform;
+    [SerializeField] RaycastForCam raycastForCam;
 
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
+        // RaycastHit hit;
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 4f))
+            // Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 20f)
+            if (raycastForCam.didHit)
             {
-                if (hit.transform.TryGetComponent<ObjectGrabbable>(out ObjectGrabbable objectGrabbable))
+                if (raycastForCam.hit.transform.TryGetComponent<ObjectGrabbable>(out ObjectGrabbable objectGrabbable))
                 {
                     Debug.Log("HELLO");
                     objectGrabbable.Grab(objectGrabPointTransform);

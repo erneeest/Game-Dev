@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public float playerReach = 3f;
     Interactable currentInteractable;
     public bool isInDialogue = false;
 

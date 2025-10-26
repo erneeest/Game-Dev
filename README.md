@@ -30,6 +30,7 @@ It serves as a collection of experiments, projects, and notes while improving my
 - Outline Unity External Asset
 - Setting Interact() in the Inspector
 - Reusable Prefab and Script for Interact
+- Pickup and Drop Object/Items - Code Monkey
 
 ### 🏗️ Level Design Tools
 - ProBuilder for creating and editing meshes
