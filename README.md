@@ -8,6 +8,7 @@ It serves as a collection of experiments, projects, and notes while improving my
 ## 📌 Topics Covered
 
 ### 🗂️ Project Organization
+- Create reusable components
 - 12h Advanced C# by CodeMonkey
 - Folder structure
 - Asset management
