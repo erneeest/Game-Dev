@@ -5,7 +5,7 @@ using Yarn.Unity;
 
 public class Dialogue001 : MonoBehaviour
 {
-    [SerializeField] DialogueRunner dialogueRunner;
+    // [SerializeField] DialogueRunner dialogueRunner;
     [SerializeField] TextMeshProUGUI dialogue;
     [SerializeField] string dialogueText;
     [SerializeField] float timer;
@@ -23,7 +23,7 @@ public class Dialogue001 : MonoBehaviour
             // dialogue.text = dialogueText.ToString();
             // StartCoroutine(DisableText());
             Destroy(gameObject);
-            dialogueRunner.StartDialogue("Dog");
+            // dialogueRunner.StartDialogue("Dog");
         }
 
     }
