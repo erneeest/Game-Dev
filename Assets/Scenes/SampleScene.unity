@@ -1216,7 +1216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 61186a80725231c47a92cb32fb6b7083, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5069306351237834454, guid: 61186a80725231c47a92cb32fb6b7083, type: 3}
       propertyPath: m_IsActive
@@ -1778,7 +1778,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &353939191
 Transform:
   m_ObjectHideFlags: 0
@@ -2089,6 +2089,7 @@ MonoBehaviour:
   lightingSound: {fileID: 267419522}
   playerMovement: {fileID: 303264272}
   headBob: {fileID: 1865166305}
+  cinemachineBrain: {fileID: 1865166300}
 --- !u!4 &454481456
 Transform:
   m_ObjectHideFlags: 0
@@ -2864,8 +2865,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
   Priority:
-    Enabled: 0
-    m_Value: 0
+    Enabled: 1
+    m_Value: 1
   OutputChannel: 1
   StandbyUpdate: 2
   m_StreamingVersion: 20241001
@@ -4556,7 +4557,7 @@ MonoBehaviour:
     DefaultMode: 2
   DefaultBlend:
     Style: 1
-    Time: 2
+    Time: 1
     CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -4572,7 +4573,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865166299}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.005670706, y: 0.2353324, z: 0.0013730882, w: 0.9718974}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4838,7 +4839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1981869815
 Transform:
   m_ObjectHideFlags: 0
@@ -4867,8 +4868,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
   Priority:
-    Enabled: 0
-    m_Value: 0
+    Enabled: 1
+    m_Value: 1
   OutputChannel: 1
   StandbyUpdate: 2
   m_StreamingVersion: 20241001
@@ -5119,6 +5120,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 555393123423236302, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2576323899156712400, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.92
@@ -5160,9 +5165,45 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 454481455}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 454481455}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: LookAtInteract
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DialogueEvents, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 887852638}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Nanay
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Unity.Cinemachine.CinemachineCamera, Unity.Cinemachine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
 using Yarn;
 using Yarn.Unity;
@@ -18,18 +19,38 @@ public class DialogueEvents : MonoBehaviour
     [Header("Player Movement")]
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField] HeadBob headBob;
+
+    [Header("Cinemachine Brain")]
+    [SerializeField] CinemachineBrain cinemachineBrain;
+
     void Start()
     {
         // dialogueRunner.onNodeComplete.AddListener(CustomFunction);
         dialogueRunner.onNodeComplete.AddListener(AfterDialogue); // Adding listener
     }
 
-    //when interacted with the NPC
+    //=========================================================== Start a dialogue in the interactable
     public void CustomStartDialogue(string node)
     {
         dialogueRunner.StartDialogue(node);
-
     }
+
+    public void LookAtInteract(CinemachineCamera priorityCam)
+    {
+        var currentCam = cinemachineBrain.ActiveVirtualCamera as CinemachineCamera;
+ 
+        if (currentCam != null)
+        {
+            currentCam.Priority.Enabled = false;
+        }
+
+        if (priorityCam != null)
+        {
+            priorityCam.Priority.Enabled = true; // make it the active camera
+        }
+    }
+
+    //=========================================================== onNodeComplete functions
 
     //OnNodeComplete
     void CustomFunction(string node)
@@ -40,22 +61,12 @@ public class DialogueEvents : MonoBehaviour
             Debug.Log(node);
         }
     }
-
     IEnumerator delay()
     {
         yield return new WaitForSeconds(3);
         NPC.SetActive(true);
     }
 
-        //On every node that started, disable [E]
-    public void DisableInteractWhenStartDialoguue(string node)
-    {
-        playerInteraction.isInDialogue = true;
-    }
-    public void EnableInteractWhenStartDialogue(string node)
-    {
-        playerInteraction.isInDialogue = false;
-    }
 
     //test thunder
     void AfterDialogue(string node) // this will happen the node's done
@@ -73,6 +84,17 @@ public class DialogueEvents : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         lightning.SetActive(false);
         cam.backgroundColor = Color.black;
+    }
+    
+    //=========================================================== Fix in Dialogue
+    //On every node that started, disable [E]
+    public void DisableInteractWhenStartDialoguue(string node)
+    {
+        playerInteraction.isInDialogue = true;
+    }
+    public void EnableInteractWhenStartDialogue(string node)
+    {
+        playerInteraction.isInDialogue = false;
     }
 
     //Movement 
