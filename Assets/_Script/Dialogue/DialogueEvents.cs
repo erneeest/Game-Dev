@@ -16,6 +16,9 @@ public class DialogueEvents : MonoBehaviour
     [SerializeField] GameObject lightning;
     [SerializeField] AudioSource lightingSound;
 
+    [Header("Mouse Look")]
+    [SerializeField] MouseLook mouseLook;
+
     [Header("Player Movement")]
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField] HeadBob headBob;
@@ -35,12 +38,13 @@ public class DialogueEvents : MonoBehaviour
     public void CustomStartDialogue(string node)
     {
         dialogueRunner.StartDialogue(node);
-
+        mouseLook.enabled = false;
     }
     public void CustomEndDialogue(string node)
     {
-        currentCam.Priority.Enabled = true;
-        prioCam.Priority.Enabled = false;
+        prioCam.Priority.Value = 0;
+        mouseLook.enabled = true;
+        currentCam.Priority.Value = 999;
     }
     
 
@@ -51,12 +55,12 @@ public class DialogueEvents : MonoBehaviour
  
         if (currentCam != null)
         {
-            currentCam.Priority.Enabled = false;
+            currentCam.Priority.Value = 0;
         }
 
         if (priorityCam != null)
         {
-            priorityCam.Priority.Enabled = true; // make it the active camera
+            priorityCam.Priority.Value = 999; // make it the active camera
         }
     }
 

@@ -1963,7 +1963,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &446270643
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2111,6 +2111,7 @@ MonoBehaviour:
   cam: {fileID: 1865166303}
   lightning: {fileID: 312353030}
   lightingSound: {fileID: 267419522}
+  mouseLook: {fileID: 1076846491}
   playerMovement: {fileID: 303264272}
   headBob: {fileID: 1865166305}
   cinemachineBrain: {fileID: 1865166300}
@@ -2173,6 +2174,113 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &532842228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 532842229}
+  - component: {fileID: 532842232}
+  - component: {fileID: 532842231}
+  - component: {fileID: 532842230}
+  m_Layer: 0
+  m_Name: NPC2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &532842229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532842228}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0017913092, y: 0.9566279, z: 0.0058837067, w: 0.29124773}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1076846492}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &532842230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532842228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineBasicMultiChannelPerlin
+  NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
+  PivotOffset: {x: 0, y: 0, z: 0}
+  AmplitudeGain: 1
+  FrequencyGain: 1
+  m_NoiseOffsets: {x: -281.44727, y: -625.1349, z: -444.61548}
+--- !u!114 &532842231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532842228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineHardLookAt
+  LookAtOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &532842232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532842228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
+  Priority:
+    Enabled: 1
+    m_Value: 0
+  OutputChannel: 1
+  StandbyUpdate: 2
+  m_StreamingVersion: 20241001
+  m_LegacyPriority: 0
+  Target:
+    TrackingTarget: {fileID: 1671610299}
+    LookAtTarget: {fileID: 0}
+    CustomLookAtTarget: 0
+  Lens:
+    FieldOfView: 60.000004
+    OrthographicSize: 10
+    NearClipPlane: 0.1
+    FarClipPlane: 5000
+    Dutch: 0
+    ModeOverride: 0
+    PhysicalProperties:
+      GateFit: 2
+      SensorSize: {x: 21.946, y: 16.002}
+      LensShift: {x: 0, y: 0}
+      FocusDistance: 10
+      Iso: 200
+      ShutterSpeed: 0.005
+      Aperture: 16
+      BladeCount: 5
+      Curvature: {x: 2, y: 11}
+      BarrelClipping: 0.25
+      Anamorphism: 0
+  BlendHint: 0
 --- !u!1 &613858637
 GameObject:
   m_ObjectHideFlags: 0
@@ -2890,7 +2998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
   Priority:
     Enabled: 1
-    m_Value: 1
+    m_Value: 0
   OutputChannel: 1
   StandbyUpdate: 2
   m_StreamingVersion: 20241001
@@ -4248,6 +4356,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 156455750}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1671610299 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4247136824511378933, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+  m_PrefabInstance: {fileID: 1685517917}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1685517917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4282,15 +4395,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2576323899156712400, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2576323899156712400, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2576323899156712400, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2576323899156712400, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4306,14 +4419,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 454481455}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 454481455}
     - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
@@ -4321,11 +4442,23 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CustomStartDialogue
       objectReference: {fileID: 0}
     - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: LookAtInteract
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DialogueEvents, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: DialogueEvents, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
@@ -4333,8 +4466,20 @@ PrefabInstance:
       value: Dog
       objectReference: {fileID: 0}
     - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 532842232}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Dog
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173928450094512504, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
+      propertyPath: onInteraction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Unity.Cinemachine.CinemachineCamera, Unity.Cinemachine
       objectReference: {fileID: 0}
     - target: {fileID: 8018728634499208988, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: raycastForCam
@@ -4893,7 +5038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
   Priority:
     Enabled: 1
-    m_Value: 1
+    m_Value: 0
   OutputChannel: 1
   StandbyUpdate: 2
   m_StreamingVersion: 20241001
@@ -5166,15 +5311,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2576323899156712400, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2576323899156712400, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2576323899156712400, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2576323899156712400, guid: e1b55ddc3d18c814a8d75a59be44c592, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5386,6 +5531,9 @@ PrefabInstance:
       addedObject: {fileID: 887852636}
     - targetCorrespondingSourceObject: {fileID: 5971637701538993393, guid: fb2c6c78b49fc2c4e9a8d6d86c115bcc, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 532842229}
+    - targetCorrespondingSourceObject: {fileID: 5971637701538993393, guid: fb2c6c78b49fc2c4e9a8d6d86c115bcc, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 99189199}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8266333823062405925, guid: fb2c6c78b49fc2c4e9a8d6d86c115bcc, type: 3}
@@ -5412,6 +5560,8 @@ SceneRoots:
   - {fileID: 454481456}
   - {fileID: 353939191}
   - {fileID: 23687160}
+  - {fileID: 655353716736786989}
+  - {fileID: 1685517917}
   - {fileID: 6985445123334574284}
   - {fileID: 11241565}
   - {fileID: 1281675321}
@@ -5423,8 +5573,6 @@ SceneRoots:
   - {fileID: 798897370}
   - {fileID: 1837956358}
   - {fileID: 156455750}
-  - {fileID: 655353716736786989}
-  - {fileID: 1685517917}
   - {fileID: 461239853}
   - {fileID: 206663387}
   - {fileID: 134686846}
