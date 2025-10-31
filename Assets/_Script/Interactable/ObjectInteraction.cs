@@ -1,9 +1,8 @@
 using UnityEngine;
 
-public class PlayerInteraction : MonoBehaviour
+public class ObjectInteraction : MonoBehaviour
 {
     Interactable currentInteractable;
-    public bool isInDialogue = false;
 
     [Header("Raycast")]
     [SerializeField] RaycastForCam raycastForCam;
@@ -13,15 +12,14 @@ public class PlayerInteraction : MonoBehaviour
         CheckInteraction();
 
         // CheckIfDialogueIsEnded();
-        if (currentInteractable != null && currentInteractable.isDialogueEnded)
+        if (currentInteractable != null)
         {
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null && !isInDialogue)
+        if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
         {
-            currentInteractable.Interact();
-            currentInteractable.isDialogueEnded = true;         
+            currentInteractable.Interact();   
         }
 
     }
@@ -36,7 +34,7 @@ public class PlayerInteraction : MonoBehaviour
         }
             
         
-            if (raycastForCam.hit.collider.CompareTag("Interactable"))//if looking at an interactable object
+            if (raycastForCam.hit.collider.CompareTag("ObjectInteractable"))//if looking at an interactable object
             {
                 Interactable newInteractable = raycastForCam.hit.collider.GetComponent<Interactable>();
 
@@ -64,19 +62,6 @@ public class PlayerInteraction : MonoBehaviour
     void SetNewCurrentInteractable(Interactable newInteractable)
     {
         currentInteractable = newInteractable;
-
-        if (isInDialogue)
-        {
-            currentInteractable.DisableOutline();
-            HUDController.instance.DisableInteractionText();
-            return;
-        }
-
-        // CheckIfDialogueIsEnded();
-        if (currentInteractable != null && currentInteractable.isDialogueEnded)
-        {
-            return;
-        }
 
         currentInteractable.EnableOutline();
         HUDController.instance.EnableInteractionText(currentInteractable.message);

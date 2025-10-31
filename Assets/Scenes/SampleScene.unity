@@ -1537,7 +1537,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23fa3bc693f25c74287cc47e4bc13fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  cam: {fileID: 0}
   objectGrabPointTransform: {fileID: 99189199}
   raycastForCam: {fileID: 1865166306}
 --- !u!114 &303264276
@@ -1553,6 +1552,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
   isInDialogue: 0
+  raycastForCam: {fileID: 1865166306}
+--- !u!114 &303264277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303264271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e65a439905782c04a8d0ae8e10898009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
   raycastForCam: {fileID: 1865166306}
 --- !u!1 &312353030
 GameObject:
@@ -5132,12 +5144,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5563307711193448664, guid: c81f98a9cb18e624d94eb202e126cdfc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7407059749974131823, guid: c81f98a9cb18e624d94eb202e126cdfc, type: 3}
       propertyPath: m_Name
       value: ObjectGrabbable
       objectReference: {fileID: 0}
     - target: {fileID: 7407059749974131823, guid: c81f98a9cb18e624d94eb202e126cdfc, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7407059749974131823, guid: c81f98a9cb18e624d94eb202e126cdfc, type: 3}
+      propertyPath: m_TagString
+      value: ObjectInteractable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7792477408530315143, guid: c81f98a9cb18e624d94eb202e126cdfc, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5545,6 +5569,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8266333823062405925, guid: fb2c6c78b49fc2c4e9a8d6d86c115bcc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 303264276}
+    - targetCorrespondingSourceObject: {fileID: 8266333823062405925, guid: fb2c6c78b49fc2c4e9a8d6d86c115bcc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 303264277}
     - targetCorrespondingSourceObject: {fileID: 9051206808645021126, guid: fb2c6c78b49fc2c4e9a8d6d86c115bcc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1076846491}

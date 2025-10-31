@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class PlayerPickupDrop : MonoBehaviour
 {
-
-    [SerializeField] Camera cam;
     [SerializeField] Transform objectGrabPointTransform;
     [SerializeField] RaycastForCam raycastForCam;
 
