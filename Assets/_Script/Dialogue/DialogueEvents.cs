@@ -22,6 +22,8 @@ public class DialogueEvents : MonoBehaviour
 
     [Header("Cinemachine Brain")]
     [SerializeField] CinemachineBrain cinemachineBrain;
+    private CinemachineCamera currentCam;
+    private CinemachineCamera prioCam;
 
     void Start()
     {
@@ -33,11 +35,19 @@ public class DialogueEvents : MonoBehaviour
     public void CustomStartDialogue(string node)
     {
         dialogueRunner.StartDialogue(node);
+
     }
+    public void CustomEndDialogue(string node)
+    {
+        currentCam.Priority.Enabled = true;
+        prioCam.Priority.Enabled = false;
+    }
+    
 
     public void LookAtInteract(CinemachineCamera priorityCam)
     {
-        var currentCam = cinemachineBrain.ActiveVirtualCamera as CinemachineCamera;
+        currentCam = cinemachineBrain.ActiveVirtualCamera as CinemachineCamera;
+        prioCam = priorityCam;
  
         if (currentCam != null)
         {
