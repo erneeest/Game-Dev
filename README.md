@@ -7,6 +7,9 @@ It serves as a collection of experiments, projects, and notes while improving my
 
 ## 📌 Topics Covered
 
+Gonna skip this part first,
+then study project organization and 
+architecture after the first game is released
 ### 🗂️ Project Organization
 - Create reusable components
 - 12h Advanced C# by CodeMonkey
